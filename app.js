@@ -162,7 +162,5 @@ const handleError = () => {
   spinner(false)
   imagesArea.style.display = 'none';
   errorDiv.classList.remove("d-none")
-  errorDiv.innerHTML = `<h1 class="text-center m-4 text-danger">Please insert meaningful/valid word</h1>`
-  const maker = document.getElementById('slide-maker')
-  console.log(maker);
+  errorDiv.innerHTML = `<h1 class="text-center m-4 text-danger">Please insert meaningful/valid word</h1>`;
 }
