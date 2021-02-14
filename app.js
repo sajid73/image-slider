@@ -4,6 +4,7 @@ const galleryHeader = document.querySelector('.gallery-header');
 const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
+const search = document.getElementById('search');
 // selected image 
 let sliders = [];
 
@@ -114,13 +115,22 @@ const changeSlide = (index) => {
 
   items[index].style.display = "block"
 }
-
-searchBtn.addEventListener('click', function () {
+const searchImage = () => {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
-  const search = document.getElementById('search');
   getImages(search.value)
   sliders.length = 0;
+}
+
+searchBtn.addEventListener('click', function(){
+  searchImage();
+})
+
+search.addEventListener("keyup", function(event){
+  console.log(event.key);
+  if(event.key === 'Enter'){
+    searchImage();
+  }
 })
 
 sliderBtn.addEventListener('click', function () {
